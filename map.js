@@ -48,6 +48,9 @@ console.log(bookStore.delete(book1));
 
 
 
+let bookStore1 = new Map();
+bookStore1.set('Don Quixote',true );
 
+console.log(bookStore1);
 
 
