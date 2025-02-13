@@ -14,6 +14,7 @@ numbers.unshift(0);
 
 console.log(numbers);
 
+//remove an item from the front and end of the array
 numbers.shift();
 numbers.push(6);
 

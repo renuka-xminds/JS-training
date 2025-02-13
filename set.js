@@ -60,3 +60,18 @@ tags.forEach(element => {
     console.log(element);
     
 });
+
+const posts = new Set(['p1','p2','p3','p4',5,{
+    name: "renuka",
+    Gender: "Female"
+}]);
+console.log(posts);
+for(var i of posts) {
+    console.log(i);
+}
+
+posts.forEach(element => {
+    console.log(element);
+});
+
+
