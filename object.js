@@ -79,4 +79,87 @@ obj1.setStartDate = "15/08/2024";
 
 console.log(obj1.start_date);
 
+//obect methods
 
+const a = {'name': 'Renuka', 'age': '25','gender' : 'F'};
+const b = {'name': 'Renjith', 'age': '27'};
+
+console.log(Object.assign(a,b));
+
+console.log(Object.entries(a));
+objArr = Object.entries(a);
+objArr.forEach((value,key) => {
+    console.log(key +" "+ value);
+});
+
+
+const transactions = [
+    { id: 1, amount: 100, date: "2024-02-12" },
+    { id: 2, amount: 200, date: "2024-02-13" },
+    { id: 3, amount: 150, date: "2024-02-12" },
+    { id: 4, amount: 300, date: "2024-02-14" },
+    { id: 5, amount: 250, date: "2024-02-13" }
+  ];
+
+  // Callback function to Group Elements
+function myCallback(transaction) {
+    return transaction.date;
+  }
+
+  const result = Object.groupBy(transactions, myCallback);
+  console.log(result);
+
+//Iterate the object and print the property and its value
+
+  const person={
+    Name: "johny",
+    Age: 40,
+    Cars:[
+           { 
+             name:"ford",
+             models:["mustang","Fiest","Mustang"]
+           },
+           { 
+                name:"BMW",
+                models:[320,'x3','x5']
+            },
+             { 
+                 Name:"fiat",
+                 models:[500,"panda"]
+             }
+          ]
+}
+
+const personArr = Object.entries(person);
+console.log(personArr.length);
+for(let [k,v] of personArr) {
+    console.log(k + " " + v);
+
+}
+
+//Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to the second one?
+
+// let obj2 = {
+//     name: "John",
+//     age: 23,
+//     degree: "CS"
+// }
+// let obj3 = {
+//     name: "John",
+//     age: 23,
+//     degree: "CS"
+//     }
+
+// const obj2Keys = Object.keys(obj2);
+// const obj3Keys = Object.keys(obj3);
+
+
+// if(obj2Keys != obj3Keys) {
+//     console.log("objects are not same length");
+// }
+
+// if(obj2Keys instanceof Array && obj3Keys instanceof Array) {
+//     obj2Keys.forEach(element => {
+        
+//     });
+// }
