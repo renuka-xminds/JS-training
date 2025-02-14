@@ -139,27 +139,39 @@ for(let [k,v] of personArr) {
 
 //Write a JavaScript program to compare two objects to determine if the first one contains equivalent property values to the second one?
 
-// let obj2 = {
-//     name: "John",
-//     age: 23,
-//     degree: "CS"
-// }
-// let obj3 = {
-//     name: "John",
-//     age: 23,
-//     degree: "CS"
-//     }
+let obj2 = {
+    name: "John",
+    age: 23,
+    degree: "CS"
+}
+let obj3 = {
+    name: "John",
+    age: 23,
+    degree: "CS"
+    }
 
-// const obj2Keys = Object.keys(obj2);
-// const obj3Keys = Object.keys(obj3);
+const obj2Keys = Object.keys(obj2);
+const obj3Keys = Object.keys(obj3);
 
 
-// if(obj2Keys != obj3Keys) {
-//     console.log("objects are not same length");
-// }
+if(obj2Keys != obj3Keys) {
+    console.log("objects are not same length");
+}
 
-// if(obj2Keys instanceof Array && obj3Keys instanceof Array) {
-//     obj2Keys.forEach(element => {
-        
-//     });
-// }
+for (const key of obj2Keys) {
+    const val1 = obj2[key];
+    const val2 = obj3[key];
+    const areObjects = isObject(val1) && isObject(val2);
+    if (
+      areObjects && !deepEqual(val1, val2) ||
+      !areObjects && val1 !== val2
+    ) {
+        console.log("objects are not equal");
+    }
+  }
+
+  console.log("objects are equal");
+
+  function isObject(object) {
+    return object != null && typeof object === 'object';
+  }
