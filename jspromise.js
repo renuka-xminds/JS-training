@@ -32,4 +32,32 @@ const products = [
 });
 
 
+/* Define 2 promises to fetch the user details from the array and 
+second promise to find the count of users having role admin.Using promise chain print the output */
+
+const users = [
+    { id: 1, username: 'Alice', role: 'admin' },
+    { id: 2, username: 'Bob', role: 'user' },
+    { id: 3, username: 'Charlie', role: 'editor' }
+  ];
+
+  const fetchUsers = new Promise(function (resolve, reject) {
+    if(users.length === 0) {
+        reject("users array is empty");
+    }
+    resolve(users);
+  });
+
+  fetchUsers.then(function successVal(result) {
+    
+    fetchAdmins = new Promise(function (resolve, reject) {
+        var count = 0;
+        if(result.filter(val => { if(val.role == "admin") {count += 1;} } )) {
+            resolve(`${count} admin in userlist`);
+        }
+    }).then((result => console.log(result)));
+  }).catch(function errorVal(result) {
+    console.log(result);
+  });
+
 
